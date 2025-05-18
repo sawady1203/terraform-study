@@ -9,7 +9,7 @@ variable "compute_instance_zone" {
   default     = "asia-northeast1-a"
 
   validation {
-    condition     = contains(["asia-northeast1-a", "asia-northeast1-b", "asia-northeast1-c"], var.conpute_instance_zone)
+    condition     = contains(["asia-northeast1-a", "asia-northeast1-b", "asia-northeast1-c"], var.compute_instance_zone)
     error_message = "The zone must be one of the following: asia-northeast1-a, asia-northeast1-b, asia-northeast1-c"
   }
   
@@ -29,4 +29,14 @@ resource "google_compute_instance" "default" {
   network_interface {
     network = "default"
   } 
+}
+
+output "instance_name" {
+  value = google_compute_instance.default.name
+}
+output "instance_zone" {
+  value = google_compute_instance.default.zone
+}
+output "instance_id" {
+  value = google_compute_instance.default.id
 }
