@@ -1,0 +1,9 @@
+apps:
+  - name: sample-app
+    environments:
+      - name: dev
+        project_id: "sample-app-a-dev-123"
+      - name: stg
+        # project_id省略時は自動生成される
+      - name: prod
+        project_id: "custom-app-a-prod-789"
