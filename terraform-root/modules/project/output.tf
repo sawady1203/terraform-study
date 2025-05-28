@@ -4,6 +4,3 @@ output "project_id" {
 output "project_name" {
   value = google_project.this.name
 }
-output "project_number" {
-  value = google_project.this.project_number
-}
